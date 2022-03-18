@@ -1,0 +1,12 @@
+sort1 uses: bubble sort
+
+How do you know?: fastest with an allready sorted list and not the fasted with a random list.
+
+sort2 uses: merge sort
+
+How do you know?: performs very constand and is the fastest with a lon random list.  
+
+sort3 uses: selection sort
+
+How do you know?: relative slow with a long random list, therefor not merge sort, and also not the fasteest with an 
+already ordert list and therefor also not bubble sort.
