@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block title %}
+scrabble helper
+{% endblock %}
+
+
+
+
+{% block main %}
+        
+        <div class = "jumbotron">
+            <h2 class="alert alert-danger" role="alert">Scrabble helper</h6>
+        </div>
+
+        <p  class = "main" >Find the score of your word</p>
+        <div> 
+                <form action = "/" method = "post">
+                    
+                    <input class="form-control" autocomplete = "off" name = "get_points" placeholder="Your word" type = "text">
+                    
+                    <button class="btn btn-warning" type ="submit" >Get my score</button>
+                    
+                </form>
+                
+                <p>{{apology1}}</p>
+                <p>{{score}}</p>
+        
+        </div>
+        
+        <p class = "main" > Find the optimal word given the letters already on the board, regardless the letters you can play</p>
+        <div >
+                <form action = "/" method = "post" >
+                    
+                    <input class="form-control" autocomplete = "off" name = "word" placeholder="Unfinished word" type = "text">
+                    
+                    <button class="btn btn-warning" type ="submit" >Find the optimal word</button>
+                
+                </form>
+            
+                <p>{{apology2}}</p>
+                <p>{% for i in result %}
+                    {{i}}
+                    {% endfor %}</p>
+                <P>{{score2}}</P>
+                
+        <p class = "main" >Find the optimal word, if there is one, given the letters on the board and the letters you can play</p>
+        </div>
+        
+        <div>
+                <form action = "/" method = "post">
+                    
+                    <input class="form-control" autocomplete = "off" name = "letters" placeholder="Letter you can play" type = "text">
+                    <input class="form-control" autocomplete = "off" name = "word2" placeholder="Unfinished word" type = "text">
+
+                    
+                    <button  class="btn btn-warning" type ="submit" > Find the optimal word</button>
+                    
+                </form>
+
+                
+                
+                <p>{{apology3}}</p>
+                <p>{% for i in result2 %}
+                    {{i}}
+                    {% endfor %}</p>
+                <P>{{score3}}</P>
+            
+               
+                <div>&#160</div> 
+                <div>&#160</div> 
+                <p class="comments" >*For "unfinished word" you have to fill in a word with points on the blank spots like: le..so</p>
+                <p class="comments" >*For "letters you can play" you have to fill in the letters you can play like: dwrjadbcrnoe</p>
+        </div>
+
+
+{% endblock%}

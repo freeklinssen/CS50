@@ -1,0 +1,40 @@
+body {
+    background-color: #aaaaaa;
+    color: #212529;
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 2;
+    margin: 0;
+    text-align: center;
+}
+
+.main {
+    margin-left: auto;
+    margin-right: auto;
+    margin: 1rem;
+    font-size: 1.4rem;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.jumbotron {
+    background-color: #800000;
+    color: #fff;
+    margin-bottom: 1rem;
+    padding: 2rem 2rem;
+    text-align: center;
+}
+
+.form-control
+{
+    /* Center form controls */
+    display: inline-block;
+
+    /* Override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+.comments
+{
+    color: #800000;
+}
