@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Trading history
+{% endblock %}
+
+{% block main %}
+                <h2>All transaction</h2>
+
+        
+            <table class="center">
+                <thead>
+                        <tr>
+                            <th>Symbol &#160</th>
+                            <th>Company &#160 </th>
+                            <th>Buy/sell &#160</th>
+                            <th>Price &#160</th>
+                            <th>Quantity &#160</th>
+                            <th>Date &#160</th>
+                        </tr>
+                </thead>
+                <tbody>
+                    {% for event in history %}
+                    <tr>
+                        <td>{{ event.symbol}}</td>
+                        <td>{{ event.name }}</td>
+                        <td>{{ event.type }}</td>
+                        <td>{{ event.price | usd }}</td>
+                        <td>{{ event.quantity}}</td>
+                        <td>{{ event.time }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        
+
+
+{% endblock %}

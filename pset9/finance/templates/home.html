@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+
+        <div style = "margin-left = 14">
+        <h2>total balance: {{total_balance | usd }}</h2>
+        <h2>cash balance: {{cash_balance| usd }}</h2>
+        <h2>&#160  </h2>
+        </div>
+
+                        <h4>Current and sold Positions</h4>
+
+
+            <table class="center">
+                <thead>
+                        <tr>
+                            <th> Ticker &#160</th>
+                            <th> Number of shares &#160</th>
+                            <th> Current price &#160</th>
+                            <th> Current  value &#160</th>
+                            <th> Average buying price &#160</th>
+                            <th> Total price payed &#160</th>
+                            <th> Dollar amount gain/loss &#160</th>
+                            <th> gain/loss &#160%</th>
+
+                        </tr>
+                </thead>
+                <tbody>
+                    {% for i in range(lenght) %}
+                    <tr>
+                        <td>{{ tickers[i] }}</td>
+                        <td>{{ quantities[i] }}</td>
+                        <td>{{ current_prices[i]| usd }}</td>
+                        <td>{{ current_value[i]| usd }}</td>
+                        <td>{{ avg_buy_price[i]| usd }}</td>
+                        <td>{{ buy_value[i]| usd }}</td>
+                        <td>{{ gain_loss[i]| usd }}</td>
+                        <td>{{ gain_loss_percentage[i] }}</td>
+
+
+
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+{% endblock %}
