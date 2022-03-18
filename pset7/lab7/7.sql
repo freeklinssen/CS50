@@ -1,0 +1,1 @@
+SELECT AVG(energy) FROM songs where artist_id IN (SELECT id from artists WHERE name = "Drake");
